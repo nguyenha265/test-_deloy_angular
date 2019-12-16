@@ -1,0 +1,51 @@
+<div class="container">
+  <table id="cart" class="table table-hover table-condensed">
+    <thead>
+    <tr>
+      <th style="width:45%">Sản Phẩm</th>
+      <th style="width:10%">Giá</th>
+      <th style="width:10%">Số Lượng</th>
+      <th style="width:23%" class="text-center">Thành Tiền</th>
+      <th style="width:12%">Chức Năng</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let product of carts; let i = index">
+      <td data-th="Product">
+        <div class="row">
+          <div class="col-sm-2 hidden-xs"><img src="{{product.picture[0].name}}" width="100px" height="100px" alt="..."
+                                               class="img-responsive"/></div>
+          <div class="col-sm-10">
+            <h4 class="nomargin">{{product.name}}</h4>
+          </div>
+        </div>
+      </td>
+      <td data-th="Price">{{product.price}}</td>
+      <td data-th="Quantity">
+        <input type="number" class="form-control text-center" (change)="total($event.target.value, product)" value="1" >
+      </td>
+      <td data-th="Subtotal" class="text-center">{{product.total}}</td>
+
+      <td class="actions" data-th="">
+        <button class="btn btn-danger btn-sm" (click)="delete(i)"><i class="fa fa-trash-o"></i>Xóa</button>
+      </td>
+    </tr>
+    </tbody>
+    <tfoot>
+
+    <tr>
+      <td><button  class="btn btn-warning" (click)="backToHome()"><i class="fa fa-angle-left"></i>Mua Thêm</button></td>
+      <td colspan="2" class="hidden-xs"></td>
+      <td class="hidden-xs text-center"><strong>Tổng Tiền : {{buy}}</strong></td>
+      <div class="alert alert-success" role="alert" *ngIf="check==='true'">
+        Đơn Hàng đang được xử lý
+      </div>
+      <div class="alert alert-danger" role="alert" *ngIf="check==='false'">
+        Lỗi
+      </div>
+      <td><button  class="btn btn-success btn-block" (click)="payAll()"> Đặt Hàng <i class="fa fa-angle-right"></i></button></td>
+    </tr>
+    </tfoot>
+  </table>
+</div>
+

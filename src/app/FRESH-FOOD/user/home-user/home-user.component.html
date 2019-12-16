@@ -1,0 +1,23 @@
+<div>
+  <div class="sidebar" *ngIf="checkRole !== 'Admin'">
+    <div><a routerLink="userDetails" class="sidebar">Thông tin cá nhân</a></div>
+    <div><a routerLink="userUpdate" class="sidebar">Sửa thông tin</a></div>
+    <div><a routerLink="updatePassword" class="sidebar">Đổi mật khẩu</a></div>
+  </div>
+  <div class="sidebar" *ngIf="checkRole === 'Admin'">
+    <button (click)="listProduct()" class="btn btn-primary">Quản lý Sản phẩm</button>
+    <br>
+    <br>
+    <button (click)="listOrder()" class="btn btn-primary">Đơn hàng chờ xử lý</button>
+    <br>
+    <br>
+    <button (click)="listOrder()" class="btn btn-primary">Kiểm tra doanh thu</button>
+  </div>
+  <router-outlet></router-outlet>
+
+
+
+
+
+
+

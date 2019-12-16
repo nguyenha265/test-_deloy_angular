@@ -1,0 +1,8 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = https://github.com/akityty/C0719G1-SEA-FRESH-FOOD-FrontEnd.git
+	fetch = +refs/heads/*:refs/remotes/origin/*

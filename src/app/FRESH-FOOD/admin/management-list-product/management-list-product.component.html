@@ -1,0 +1,21 @@
+<table class="table table-striped">
+  <tr>
+    <th>$ Tên Sản Phẩm</th>
+    <th>$ Ảnh Sản Phẩm</th>
+    <th>$ Giá Sản Phẩm</th>
+    <th>$ Chức Năng</th>
+  </tr>
+  <br>
+  <tr *ngFor="let product of products">
+    <th>{{product.name}}</th>
+    <td><u *ngFor="let image of product.picture"><img [src]="image.name" width="100px" height="100px" alt=""></u></td>
+    <th class="text-danger">{{product.price}}/Kg</th>
+    <th>
+      <a class="btn btn-success" [routerLink]="['updateProduct',product.id]">sửa</a> |
+      <a class="btn btn-success" [routerLink]="['deleteProduct',product.id]">Xóa</a>
+    </th>
+  </tr>
+</table>
+<router-outlet></router-outlet>
+
+

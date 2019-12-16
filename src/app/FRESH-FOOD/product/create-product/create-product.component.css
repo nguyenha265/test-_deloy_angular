@@ -1,0 +1,121 @@
+.justify-content-md-center {
+  margin-top: 30px;
+}
+
+.submit {
+  width: 150px !important;
+  background: #007bff;
+  color: white;
+  padding: 0px 20px;
+  margin: 0px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  text-align: center;
+  height: 40px;
+  margin-top: 30px;
+  position: absolute;
+  right: 50%;
+}
+
+.form-group row {
+  position: relative;
+}
+
+.message {
+  color: #C37736;
+  text-align: center;
+  padding-top: 20px;
+
+}
+
+.title {
+  font-size: 30px;
+  font-family: "Josefin Sans", "HelveticaNeue", "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  margin-bottom: 20px;
+  width: 100%;
+  margin-top: 30px;
+  margin-left: 150px;
+}
+
+.form_login {
+  width: 100%;
+}
+
+.morelog {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 25px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  display: block;
+  color: #898989;
+  margin-top: 30px;
+  outline: none !important;
+  cursor: pointer;
+  height: 40px;
+
+}
+
+.submit {
+  background: #ff8e4a;
+  color: #fff;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.submit:hover {
+  color: #ff8e4a;
+  background: #fff;
+  border: 1px solid #ff8e4a;
+}
+
+.breadcrumb_background {
+  background-image: url(//bizweb.dktcdn.net/100/350/980/themes/714097/assets/bg_breadcrumb.png?1553847975699);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  float: left;
+  padding: 60px 0;
+}
+
+.title_page {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 50px;
+  font-family: "Quicksand",sans-serif;
+  color: #000;
+  margin: 0;
+  text-align: center;
+}
+.bg_base_lr{
+  width: 100%;
+  display: block;
+  float: left;
+  margin-top: 30px;
+}
+.form-control{
+  height: 50px!important;
+  border-radius: 10px;
+}
+.btn-primary{
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: none;
+  border-radius: 30px;
+  padding: 0 15px;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  color: #fff;
+  background: #91ad41 !important;
+  border:1px solid #fff;
+  font-family: "Quicksand",sans-serif;
+}
+.btn-primary:hover{
+
+}
+
+

@@ -1,0 +1,42 @@
+<div id="logreg-forms" >
+    <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Đăng nhập</h1>
+    <div class="social-login">
+      <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Đăng nhập bằng Facebook</span> </button>
+      <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Đăng nhập bằng Google+</span> </button>
+    </div>
+    <p style="text-align:center"> hoặc </p>
+  <form class="form-signin" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+      <input type="text" class="form-control" name="username" formControlName="username"
+             placeholder="Tên username" required />
+      <div class="alert alert-danger" role="alert"
+           *ngIf="loginForm.get('username').invalid && loginForm.get('username').touched">
+        Username phải có ít nhất 6 kí tự!
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" formControlName="password"
+             placeholder="Mật khẩu" required minlength="6" />
+      <div class="alert alert-danger" role="alert"
+           *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched">
+        Mật khẩu gồm 6 ký tự và tối đa 16 ký tự
+      </div>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Đăng nhập</button>
+      <div class="alert alert-success" role="alert" *ngIf="userService.check==='true'">
+        Đăng nhập thành công
+      </div>
+      <div class="alert alert-danger" role="alert" *ngIf="userService.check=='false'">
+        Đăng nhập thất bại
+      </div>
+    </div>
+  </form>
+    <a href="#" id="forgot_pswd">Quên mật khẩu?</a>
+    <hr>
+    <!-- <p>Don't have an account!</p>  -->
+    <button class="btn btn-primary btn-block" type="button" id="btn-signup" (click)="onSelect()"><i class="fas fa-user-plus"></i> Tạo một tài khoản mới</button>
+  <br>
+
+</div>
+<script src="login-form.js"></script>

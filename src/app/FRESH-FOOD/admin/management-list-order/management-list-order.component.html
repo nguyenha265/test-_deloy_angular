@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="alert alert-success" role="alert" *ngIf="check==='true'">
+    xác nhận thanh toán thành công
+  </div>
+  <div class="alert alert-danger" role="alert" *ngIf="check==='false'">
+    Lỗi
+  </div>
+  <table id="cart" class="table table-hover table-condensed">
+    <thead>
+    <tr>
+      <th style="width:25%">Tên người mua</th>
+      <th style="width:25%">Ngày đặt hàng</th>
+      <th style="width:25%" class="text-center">Thành Tiền</th>
+      <th style="width:25%" class="text-center">Xác nhận đơn hàng</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let order of listOrder; let i = index">
+      <td style="width:25%" data-th="Product">{{order.user.name}}</td>
+      <td style="width:25%" data-th="Subtotal" class="text-center">{{order.date}}</td>
+      <td style="width:25%" data-th="Subtotal" class="text-center">{{order.total}}</td>
+      <td style="width:25%"><button class="btn btn-success btn-block" (click)="payAll(order.id, i)">Xác nhận thanh toán</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+

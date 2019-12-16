@@ -1,0 +1,47 @@
+<a class="btn btn-primary" (click)="bachToHome()">Quay về trang chủ</a>
+<br>
+<br>
+<h3 class="text-success">Thông tin Sản phẩm : {{product.name}}</h3>
+<br>
+<table class="table table-bordered">
+  <tr>
+    <th>Name : </th>
+    <td>{{product.name}}</td>
+  </tr>
+  <tr>
+    <th>Amount : </th>
+    <td>{{product.amount}}</td>
+  </tr>
+  <tr>
+    <th>Picture : </th>
+    <td>
+      <img src="{{product.picture[0].name}}" width="100px" height="100px" alt="">
+    </td>
+  </tr>
+  <tr>
+    <th>Price : </th>
+    <td>{{product.price}}</td>
+  </tr>
+  <tr>
+    <th>Quantity : </th>
+    <td><input type="number" [(ngModel)]="quantity" (change)="totalMoney($event.target.value)"/></td>
+  </tr>
+  <tr>
+    <th>Total : </th>
+    <td>{{total}}</td>
+  </tr>
+  <tr>
+    <th></th>
+    <td>
+      <div class="alert alert-success" role="alert" *ngIf="check==='true'">
+        Đơn Hàng đang được xử lý
+      </div>
+      <div class="alert alert-danger" role="alert" *ngIf="check==='false'">
+        Lỗi
+      </div>
+      <a class="btn btn-danger" (click)="pay()">Đặt Hàng</a>
+    </td>
+  </tr>
+</table>
+
+

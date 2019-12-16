@@ -1,0 +1,93 @@
+<form name="form" [formGroup]="updateProductForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    Sửa tên sản phẩm
+    <input type="text" class="form-control" [(ngModel)]="product.name" formControlName="name"
+           placeholder="Tên sản phẩm"/>
+    <div class="alert alert-danger" role="alert"
+         *ngIf="updateProductForm.get('name').invalid && updateProductForm.get('name').touched">
+      Chưa Điền Tên Sản Phẩm
+    </div>
+  </div>
+  <div class="form-group">
+    Sửa số lượng
+    <input type="number" class="form-control" [(ngModel)]="product.amount" formControlName="amount"
+           placeholder="Số lượng"/>
+    <div class="alert alert-danger" role="alert"
+         *ngIf="updateProductForm.get('amount').invalid && updateProductForm.get('amount').touched">
+      phải lớn hơn 1
+    </div>
+  </div>
+
+  <div class="form-group">
+    Sửa Giới thiệu Sản phẩm
+    <input type="text" class="form-control" [(ngModel)]="product.description" formControlName="description"
+           placeholder="Giới thiệu"/>
+    <div class="alert alert-danger" role="alert"
+         *ngIf="updateProductForm.get('description').invalid && updateProductForm.get('description').touched">
+      Chưa điền thông tin
+    </div>
+  </div>
+
+  <div class="form-group">
+    Sửa giá
+    <input type="number" class="form-control" [(ngModel)]="product.price" formControlName="price" placeholder="Giá"/>
+    <div class="alert alert-danger" role="alert"
+         *ngIf="updateProductForm.get('price').invalid && updateProductForm.get('price').touched">
+      Không được để trống và phải lớn hơn 1
+    </div>
+  </div>
+
+  <div class="form-group">
+    Sửa nguồn gốc
+    <input type="text" class="form-control" [(ngModel)]="product.origin" formControlName="origin"
+           placeholder="Nguồn gốc">
+  </div>
+  <div class="alert alert-danger" role="alert"
+       *ngIf="updateProductForm.get('origin').invalid && updateProductForm.get('origin').touched">
+    Chưa điền thông tin
+  </div>
+  <div class="form-group">
+    loại sản phẩm : {{product.category.name}}
+    <br>
+    sửa lại loại sản phẩm :
+    <select formControlName="category">
+      <option *ngFor="let category of listCategory" [value]="category.id">{{category.name}}</option>
+    </select>
+    <div class="alert alert-danger" role="alert"
+         *ngIf="updateProductForm.get('category').invalid && updateProductForm.get('category').touched">
+      Chưa chọn loại sản phẩm
+    </div>
+  </div>
+  <div class="form-group">
+    Nhà sản xuất : {{product.provider.name}}
+    <br>
+    Sửa lại nhà sản xuất :
+    <select formControlName="provider">
+      <option *ngFor="let provider of providers" [value]="provider.id">{{provider.name}}</option>
+    </select>
+    <div class="alert alert-danger" role="alert"
+         *ngIf="updateProductForm.get('provider').invalid && updateProductForm.get('provider').touched">
+      Chưa chọn nhà Sản xuất
+    </div>
+  </div>
+
+  <div class="form-group">
+    ảnh sản phẩm
+    <u *ngFor="let image of product.picture"><img src="{{image.name}}" alt="" width="100px" height="100px"></u>
+    <br>
+    Sửa lại ảnh :
+    <input type="file" (change)="uploadFile($event)">
+    <input type="file" (change)="uploadFile($event)">
+    <input type="file" (change)="uploadFile($event)">
+  </div>
+
+  <div class="alert alert-danger" role="alert" *ngIf="check==='false'">
+    Sửa sản phẩm thất bại
+  </div>
+  <div class="form-group">
+    <div>
+    </div>
+    <button class="btn btn-primary" type="submit">Sửa Sản Phẩm</button>
+  </div>
+</form>
+

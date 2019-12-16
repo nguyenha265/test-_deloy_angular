@@ -1,0 +1,58 @@
+<form class="form-inline md-form mr-auto mb-4">
+  <input class="form-control mr-sm-2" type="text" (change)="searchByName($event.target.value)"
+         placeholder="Tên thực phẩm" aria-label="Search">
+  <button class="btn aqua-gradient btn-rounded btn-sm my-0" (click)="search()"><u class="btn btn-success"
+                                                                                  style=" text-decoration: none;"><i
+    class="fa fa-search"></i> Search</u></button>
+</form>
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-2" id="sidebar">
+      <div>Danh sách sản phẩm</div>
+      <hr>
+      <br>
+      <div class="row" *ngFor="let category of listCategory"><a (click)="searchByCategory(category.id)" id="text">{{category.name}}</a></div>
+    </div>
+    <div class="col-md-10">
+      <div>Tất cả sản phẩm</div>
+      <hr>
+      <br>
+      <div class="container">
+        <div class="alert alert-danger" role="alert" id="shop_cart">
+          <div><a routerLink="shopCart">
+            <img src="../../assets/image/shopping_cart_icon.png">
+          </a><u *ngIf="check">({{billService.index}})</u></div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 col-sm-6" *ngFor="let product of products">
+            <div class="product-grid4">
+              <div class="product-image4">
+                <a [routerLink]="['detailProduct',product.id]">
+                  <img class="pic-1" [src]="product.picture[0].name">
+                  <img class="pic-2" [src]="product.picture[1].name">
+                </a>
+                <ul class="social">
+                  <li>
+                    <button (click)="saveCart(product)" data-tip="Thêm vào giỏ hàng"><i class="fa fa-shopping-cart"></i>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+              <div class="product-content">
+                <h3 class="title">{{product.name}}</h3>
+                <div class="price">
+                  {{product.price}}/Kg
+                </div>
+                <a class="add-to-cart" [routerLink]="['pay', product.id]">Mua ngay!</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,50 @@
+.breadcrumb_background {
+  background-image: url(//bizweb.dktcdn.net/100/350/980/themes/714097/assets/bg_breadcrumb.png?1553847975699);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  float: left;
+  padding: 60px 0;
+}
+.title_full {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 50px;
+  font-family: "Quicksand",sans-serif;
+  color: #000;
+  margin: 0;
+  text-align: center;
+}
+
+.form-inline {
+  display: inline !important;
+}
+
+.threeD {
+  color: #08ff08;
+  white-space: nowrap;
+  transform: translate(0%, 0%);
+  letter-spacing: 0.1em;
+  transition: 0.3s;
+  text-shadow: 1px 1px 0 grey, 1px 2px 0 grey, 1px 3px 0 grey, 1px 4px 0 grey,
+  1px 5px 0 grey, 1px 6px 0 grey, 1px 7px 0 grey, 1px 8px 0 grey,
+  5px 13px 15px black;
+}
+
+.threeD:hover {
+  transition: 0.3s;
+  transform: scale(1.1)translate(-2%, -5%);
+  text-shadow: 1px -1px 0 grey, 1px -2px 0 grey, 1px -3px 0 grey,
+  1px -4px 0 grey, 1px -5px 0 grey, 1px -6px 0 grey, 1px -7px 0 grey,
+  1px -8px 0 grey, 5px -13px 15px black, 5px -13px 25px #808080;
+}
+
+.shop_cart {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+.shop_cart a img {
+  height: 35px;
+  width: 55px;
+}

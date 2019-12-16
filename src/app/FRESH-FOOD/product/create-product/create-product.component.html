@@ -1,0 +1,81 @@
+<form name="form" [formGroup]="createProductForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    Tên sản phẩm
+    <input type="text" class="form-control" formControlName="name" placeholder="Tên sản phẩm"/>
+    <div class="alert alert-danger" role="alert"
+         *ngIf="createProductForm.get('name').invalid && createProductForm.get('name').touched">
+      Chưa Điền Tên Sản Phẩm
+    </div>
+  </div>
+  <div class="form-group">
+    Số lượng
+    <input type="number" class="form-control" formControlName="amount" placeholder="Số lượng"/>
+    <div class="alert alert-danger" role="alert"
+         *ngIf="createProductForm.get('amount').invalid && createProductForm.get('amount').touched">
+      phải lớn hơn 1
+    </div>
+  </div>
+
+  <div class="form-group">
+    Giới thiệu Sản phẩm
+    <input type="text" class="form-control" formControlName="description" placeholder="Giới thiệu"/>
+    <div class="alert alert-danger" role="alert"
+         *ngIf="createProductForm.get('description').invalid && createProductForm.get('description').touched">
+      Chưa điền thông tin
+    </div>
+  </div>
+
+  <div class="form-group">
+    Giá
+    <input type="number" class="form-control" formControlName="price" placeholder="Giá"/>
+    <div class="alert alert-danger" role="alert"
+         *ngIf="createProductForm.get('price').invalid && createProductForm.get('price').touched">
+      Không được để trống và phải lớn hơn 1
+    </div>
+  </div>
+
+  <div class="form-group">
+    Nguồn gốc
+    <input type="text" class="form-control" formControlName="origin" placeholder="Nguồn gốc">
+  </div>
+  <div class="alert alert-danger" role="alert"
+       *ngIf="createProductForm.get('origin').invalid && createProductForm.get('origin').touched">
+    Chưa điền thông tin
+  </div>
+  <div class="form-group">
+    phân loại sản phẩm :
+   <select formControlName="category">
+     <option *ngFor="let category of listCategory" [value]="category.id">{{category.name}}</option>
+   </select>
+    <div class="alert alert-danger" role="alert"
+         *ngIf="createProductForm.get('category').invalid && createProductForm.get('category').touched">
+      Chưa chọn loại sản phẩm
+    </div>
+  </div>
+  <div class="form-group">
+    Chọn Nhà sản xuất :
+    <select formControlName="provider">
+      <option *ngFor="let provider of providers" [value]="provider.id">{{provider.name}}</option>
+    </select>
+    <div class="alert alert-danger" role="alert"
+         *ngIf="createProductForm.get('provider').invalid && createProductForm.get('provider').touched">
+      Chưa chọn nhà Sản xuất
+    </div>
+  </div>
+
+  <div class="form-group">
+    Thêm ảnh sản phẩm
+    <input type="file" (change)="uploadFile($event)">
+    <input type="file" (change)="uploadFile($event)">
+    <input type="file" (change)="uploadFile($event)">
+  </div>
+
+  <div class="alert alert-danger" role="alert" *ngIf="check==='false'">
+    Thêm sản phẩm thất bại
+  </div>
+  <div class="form-group">
+    <div>
+    </div>
+    <button class="btn btn-primary" type="submit">Thêm Sản Phẩm</button>
+  </div>
+</form>
