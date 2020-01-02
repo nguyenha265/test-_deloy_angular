@@ -16,7 +16,7 @@ import {CategoryService} from '../../service/Category/category.service';
 })
 export class ListProductComponent implements OnInit, OnDestroy {
   products: Product[] = [];
-  carts: Product[] = [];
+  carts: any = [];
   check = false;
   searchName = '';
   listCategory: Category[];
